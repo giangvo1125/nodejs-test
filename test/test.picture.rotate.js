@@ -9,11 +9,11 @@ chai.use(chaiHttp)
 
 const instance = chai.request(server)
 
-describe('Common', () => {
+describe('Rotate', () => {
     beforeEach((done) => {
-        done();
-    });
-    describe('Route Picture', () => {
+        done()
+    })
+    describe('Rotate Array', () => {
         it('it should rotate array', done => {
             let grid = [
             	[1, 2, 3],
@@ -34,7 +34,7 @@ describe('Common', () => {
             		res.should.be.a('object')
             		res.body.should.have.property('result')
             		res.body.result.should.eql(modifyGrid)
-            		done();
+            		done()
             	})
         })
         it('it should error when not pass grid and k parameter', done => {
@@ -46,7 +46,7 @@ describe('Common', () => {
             		res.should.be.a('object')
             		res.body.should.have.property('msg')
             		res.body.msg.should.eql('required params')
-            		done();
+            		done()
             	})
         })
     })

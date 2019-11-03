@@ -1,5 +1,9 @@
-import commonService from './service.common'
+import rotateService from './service.rotate'
+import hotelService from './service.hotel'
+import productService from './service.product'
 
 module.exports = {
-	commonService
+	rotateService,
+	hotelService,
+	productService
 }
