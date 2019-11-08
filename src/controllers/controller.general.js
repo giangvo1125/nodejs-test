@@ -6,7 +6,7 @@ class GeneralController {
 		if(!grid || !k) {
 			return res.status(500).send({msg: 'required params'})
 		}
-		let result = rotateService.rotateArray(grid, k)
+		let result = rotateService.rotateMatrix(grid, k)
 		return res.status(200).send({result})
 	};
 	

@@ -1,18 +1,21 @@
-const reverse = array => [...array].reverse()
-const compose = (a, b) => x => a(b(x))
+const compose = a => x => a([...x].reverse())
 
-const rotate = array => (
+const rotate90Deg = array => (
 	array[0].map((column, index) => (
     	array.map(row => row[index])
   	))
 )
 
-const rotateArray = (array = [], n = 0) => {
-	if(n > 0 && n%4 != 0) {
-		let func = compose(rotate, reverse)
-		array = func(array)
-		n--
-		return rotateArray(array, n)
+const rotateMatrix = (array = [], n = 0) => {
+	if(array && Array.isArray(array) && array.length > 0) {
+		let excuteFunction = compose(rotate)
+		let k = n % 4
+		if(k > 0) {
+			for(let i = 0; i < k; i++) {
+				array = excuteFunction(array)
+			}
+		}
+		return array
 	}
 	else {
 		return array
@@ -20,5 +23,5 @@ const rotateArray = (array = [], n = 0) => {
 }
 
 module.exports = {
-	rotateArray
+	rotateMatrix
 }
