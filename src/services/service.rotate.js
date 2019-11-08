@@ -8,7 +8,7 @@ const rotate90Deg = array => (
 
 const rotateMatrix = (array = [], n = 0) => {
 	if(array && Array.isArray(array) && array.length > 0) {
-		let excuteFunction = compose(rotate)
+		let excuteFunction = compose(rotate90Deg)
 		let k = n % 4
 		if(k > 0) {
 			for(let i = 0; i < k; i++) {
